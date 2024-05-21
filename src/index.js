@@ -7,6 +7,7 @@ import { createCardElement } from './components/card.js';
 import { deleteCard } from './components/card.js';
 import { openPopup } from './components/modal.js';
 import { closePopup } from './components/modal.js';
+import { activeLike } from './components/card.js';
 
 const placeList = document.querySelector('.places__list');
 
@@ -17,8 +18,6 @@ const popupTypeNewCard = document.querySelector('.popup_type_new-card')
 
 const editProfileButton = document.querySelector('.profile__edit-button')
 const editCardButton = document.querySelector('.profile__add-button')
-
-const popupButtonClose = document.querySelectorAll('.popup__close')
 
 const formElement = document.querySelector('[name = edit-profile]')
 const formAddCard = document.querySelector('[name = new-place]')
@@ -62,10 +61,6 @@ function openImgPopup(imgSrc, imgName) {
     popupImg.alt = imgName
     caption.textContent = imgName
     openPopup(imgPopup)
-}
-
-function activeLike (evt) {
-    evt.classList.toggle('card__like-button_is-active')
 }
 
 function openPopupCard () {
